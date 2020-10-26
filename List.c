@@ -103,6 +103,13 @@ void imprimeList(tList l, void f(void*)){
         return;
     }
 }
+void interact(void f(void*), tList l){
+    if(!isEmpty(l)){
+        for(tNode p = l->fst; p != NULL; p = p->prox){
+            f(p->info);
+        }
+    }
+}
 void freeLista(tList l, void f(void*)){
     if(!isEmpty(l)){
         tNode aux = NULL;
